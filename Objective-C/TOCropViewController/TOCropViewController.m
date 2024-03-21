@@ -114,7 +114,7 @@ static const CGFloat kTOCropViewControllerToolbarHeight = 44.0f;
 
     // Set up view controller properties
     self.transitioningDelegate = self;
-    self.view.backgroundColor = self.cropView.backgroundColor;
+    self.view.backgroundColor = [UIColor colorWithRed:18.f/255.f green:20.f/255.f blue:25.f/255.f alpha:1.f]; // self.cropView.backgroundColor;
     
     BOOL circularMode = (self.croppingStyle == TOCropViewCroppingStyleCircular);
 

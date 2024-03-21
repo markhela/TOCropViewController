@@ -22,11 +22,12 @@ class ViewController: UIViewController, CropViewControllerDelegate, UIImagePicke
         guard let image = (info[UIImagePickerController.InfoKey.originalImage] as? UIImage) else { return }
         
         let cropController = CropViewController(croppingStyle: croppingStyle, image: image)
-        //cropController.modalPresentationStyle = .fullScreen
+        cropController.modalPresentationStyle = .fullScreen
         cropController.delegate = self
+        cropController.cropView.backgroundColor = UIColor(red: 18.0/255.0, green: 20.0/255.0, blue: 25.0/255.0, alpha: 1.0)
         
         // Uncomment this if you wish to provide extra instructions via a title label
-        //cropController.title = "Crop Image"
+//        cropController.title = "Crop"
     
         // -- Uncomment these if you want to test out restoring to a previous crop setting --
         //cropController.angle = 90 // The initial angle in which the image will be rotated
@@ -39,13 +40,15 @@ class ViewController: UIViewController, CropViewControllerDelegate, UIImagePicke
         //cropController.aspectRatioPickerButtonHidden = true
     
         // -- Uncomment this line of code to place the toolbar at the top of the view controller --
-        //cropController.toolbarPosition = .top
+        cropController.toolbarPosition = .top
     
-        //cropController.rotateButtonsHidden = true
+        cropController.rotateButtonsHidden = true
         //cropController.rotateClockwiseButtonHidden = true
     
-        //cropController.doneButtonTitle = "Title"
-        //cropController.cancelButtonTitle = "Title"
+        cropController.doneButtonTitle = "Save"
+        cropController.cancelButtonTitle = "Calcel"
+        
+        cropController.toolbar.resetButton.setImage(UIImage(named: "reset"), for: .normal)
         
         //cropController.toolbar.doneButtonHidden = true
         //cropController.toolbar.cancelButtonHidden = true

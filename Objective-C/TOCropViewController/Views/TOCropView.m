@@ -181,29 +181,29 @@ typedef NS_ENUM(NSInteger, TOCropViewOverlayEdge) {
     [self.scrollView addSubview:self.backgroundContainerView];
     
     //Grey transparent overlay view
-    self.overlayView = [[UIView alloc] initWithFrame:self.bounds];
-    self.overlayView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    self.overlayView.backgroundColor = [self.backgroundColor colorWithAlphaComponent:0.35f];
-    self.overlayView.hidden = NO;
-    self.overlayView.userInteractionEnabled = NO;
-    [self addSubview:self.overlayView];
+//    self.overlayView = [[UIView alloc] initWithFrame:self.bounds];
+//    self.overlayView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+//    self.overlayView.backgroundColor = [self.backgroundColor colorWithAlphaComponent:0.35f];
+//    self.overlayView.hidden = NO;
+//    self.overlayView.userInteractionEnabled = NO;
+//    [self addSubview:self.overlayView];
     
     //Translucency View
-    if (NSClassFromString(@"UIVisualEffectView")) {
-        self.translucencyEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
-        self.translucencyView = [[UIVisualEffectView alloc] initWithEffect:self.translucencyEffect];
-        self.translucencyView.frame = self.bounds;
-    }
-    else {
-        UIToolbar *toolbar = [[UIToolbar alloc] init];
-        toolbar.barStyle = UIBarStyleBlack;
-        self.translucencyView = toolbar;
-        self.translucencyView.frame = CGRectInset(self.bounds, -1.0f, -1.0f);
-    }
-    self.translucencyView.hidden = self.translucencyAlwaysHidden;
-    self.translucencyView.userInteractionEnabled = NO;
-    self.translucencyView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    [self addSubview:self.translucencyView];
+//    if (NSClassFromString(@"UIVisualEffectView")) {
+//        self.translucencyEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
+//        self.translucencyView = [[UIVisualEffectView alloc] initWithEffect:self.translucencyEffect];
+//        self.translucencyView.frame = self.bounds;
+//    }
+//    else {
+//        UIToolbar *toolbar = [[UIToolbar alloc] init];
+//        toolbar.barStyle = UIBarStyleBlack;
+//        self.translucencyView = toolbar;
+//        self.translucencyView.frame = CGRectInset(self.bounds, -1.0f, -1.0f);
+//    }
+//    self.translucencyView.hidden = self.translucencyAlwaysHidden;
+//    self.translucencyView.userInteractionEnabled = NO;
+//    self.translucencyView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+//    [self addSubview:self.translucencyView];
     
     // The forground container that holds the foreground image view
     self.foregroundContainerView = [[UIView alloc] initWithFrame:(CGRect){0,0,200,200}];
